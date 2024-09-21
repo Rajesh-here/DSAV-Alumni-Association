@@ -221,79 +221,7 @@
             margin-top: 20px;
         }
 
-        /* Responsive Styles */
-     <!--  @media (max-width: 768px) {
-            .nav-list {
-                flex-direction: column;
-                display: none;
-            }
-
-            .nav-list.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-list li {
-                margin: 10px 0;
-            }
-
-            .content {
-                width: 90%;
-                padding: 15px;
-            }
-
-            .main-text h2 {
-                font-size: 1.5em;
-            }
-
-            .notice-board h2 {
-                font-size: 1.5em;
-            }
-
-            .notice-board .notices ul {
-                animation: scroll-up 15s linear infinite;
-            }
-        } -->
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.2em;
-            }
-
-            .circle {
-                width: 100px;
-                height: 100px;
-            }
-
-            .main-text h2 {
-                font-size: 1.3em;
-            }
-            nav ul {
-                flex-direction: column;
-                padding: 0;
-            }
-
-            nav ul li {
-                margin: 8px 0;
-            }
-
-            nav ul li a {
-                padding: 8px 12px;
-                font-size: 0.9em;
-            }
-
-
-            .notice-board h2 {
-                font-size: 1.3em;
-            }
-
-            .notice-board .notices ul li a {
-                font-size: 1em;
-            }
-        }
+      
 
         /* Adjust animation for vertical scrolling on smaller screens */
         @keyframes scroll-up {
@@ -312,11 +240,7 @@
            <!-- <img src="dsav_logo_alumni.jpg" alt="School Logo"> -->
         </div>
         <h1>DEBAGRAM S A VIDYAPITH ALUMNI ASSOCIATION</h1>
-        <!-- <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div> -->
+        
     </header>
 
     <nav>
@@ -362,15 +286,7 @@
         <p>&copy; 2024 School Alumni Association. All rights reserved.</p>
     </footer>
 
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
-
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
+   
     </script>
 </body>
 </html>
