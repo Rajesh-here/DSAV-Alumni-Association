@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Alumni Association</title>
     <link rel="stylesheet" href="styles.css">
-
     <style>
         /* Reset some default styles */
         * {
@@ -28,35 +27,32 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
-            position: relative;
         }
 
-        /* Logo Container */
+        header h1 {
+            font-size: 1.5em;
+            text-align: center;
+            flex: 1 1 100%;
+        }
+
         .logo-container {
-            display: flex;
-            align-items: center;
+            flex: 0 0 auto;
+            text-align: center;
+            margin-top: 10px;
         }
 
         .logo-container img {
-            width: 60px;
-            height: 60px;
+            width: 150px;
+            height: auto;
             border-radius: 50%;
-            border: 3px solid #2980b9;
-            margin-right: 15px;
+            border: 4px solid #2980b9;
         }
 
-        /* Header Title */
-        header h1 {
-            font-size: 1.5em;
-            flex: 1;
-            text-align: center;
-        }
-
-        /* Hamburger Menu Toggle */
-        .menu-toggle {
+       <!-- .menu-toggle {
             display: none;
             flex-direction: column;
             cursor: pointer;
+            padding: 10px;
         }
 
         .menu-toggle .bar {
@@ -65,26 +61,11 @@
             background-color: #fff;
             margin: 4px 0;
             transition: 0.4s;
-        }
+        } -->
 
-        /* Navigation Styles */
         nav {
             background-color: #444;
             width: 100%;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            z-index: 1000;
-            display: none; /* Hidden by default */
-            transition: max-height 0.3s ease-out;
-            overflow: hidden;
-            max-height: 0;
-        }
-
-        /* Show navigation when active */
-        nav.active {
-            display: block;
-            max-height: 500px; /* Adjust as needed */
         }
 
         .nav-list {
@@ -93,7 +74,6 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            flex-direction: row;
         }
 
         .nav-list li {
@@ -114,7 +94,6 @@
             border-radius: 4px;
         }
 
-        /* Content Styles */
         .content {
             width: 80%;
             max-width: 1200px;
@@ -123,6 +102,25 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .circle {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #2980b9;
+        }
+
+        .circle img {
+            width: 100%;
+            height: auto;
         }
 
         .main-text h2 {
@@ -224,26 +222,18 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 768px) {
-            /* Show the hamburger menu */
-            .menu-toggle {
+     <!--  @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav-list.active {
                 display: flex;
             }
 
-            /* Hide the navigation menu by default */
-            nav {
-                display: none;
-                max-height: 0;
-            }
-
-            /* Show navigation when active */
-            nav.active {
-                display: block;
-                max-height: 500px; /* Adjust as needed */
-            }
-
-            .nav-list {
-                flex-direction: column;
+            .menu-toggle {
+                display: flex;
             }
 
             .nav-list li {
@@ -266,9 +256,21 @@
             .notice-board .notices ul {
                 animation: scroll-up 15s linear infinite;
             }
-        }
+        } -->
 
         @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .main-text h2 {
+                font-size: 1.3em;
+            }
             nav ul {
                 flex-direction: column;
                 padding: 0;
@@ -283,18 +285,6 @@
                 font-size: 0.9em;
             }
 
-            header h1 {
-                font-size: 1.2em;
-            }
-
-            .logo-container img {
-                width: 50px;
-                height: 50px;
-            }
-
-            .main-text h2 {
-                font-size: 1.3em;
-            }
 
             .notice-board h2 {
                 font-size: 1.3em;
@@ -319,17 +309,17 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="dsav_logo_alumni.jpg" alt="School Logo">
+           <!-- <img src="dsav_logo_alumni.jpg" alt="School Logo"> -->
         </div>
         <h1>DEBAGRAM S A VIDYAPITH ALUMNI ASSOCIATION</h1>
-        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="primary-navigation">
+        <!-- <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </div>
+        </div> -->
     </header>
 
-    <nav id="primary-navigation">
+    <nav>
         <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -341,7 +331,11 @@
     </nav>
 
     <div class="content">
-        <!-- Removed Duplicate Logo Section -->
+        <div class="profile-image">
+            <div class="circle">
+                <img src="dsav_logo_alumni.jpg" alt="School Image">
+            </div>
+        </div>
         <div class="main-text">
             <h2>Connecting Alumni, Building Community</h2>
             <p style="text-align: justify;">
@@ -371,15 +365,11 @@
     <script>
         // Mobile Menu Toggle
         const mobileMenu = document.getElementById('mobile-menu');
-        const nav = document.getElementById('primary-navigation');
+        const navList = document.querySelector('.nav-list');
 
         mobileMenu.addEventListener('click', () => {
-            nav.classList.toggle('active');
+            navList.classList.toggle('active');
             mobileMenu.classList.toggle('active');
-
-            // Update aria-expanded attribute for accessibility
-            const isExpanded = mobileMenu.classList.contains('active');
-            mobileMenu.setAttribute('aria-expanded', isExpanded);
         });
     </script>
 </body>
