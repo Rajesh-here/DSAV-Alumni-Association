@@ -261,7 +261,7 @@
                 transform: translateY(-100%);
             }
         }
-section {
+	section {
             margin-bottom: 30px;
             padding: 10px 20px;
         }
