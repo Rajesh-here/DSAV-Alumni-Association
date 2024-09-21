@@ -6,169 +6,30 @@
     <title>About Us - Alumni Association</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-	/* Reset some default styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-	    
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
+	 header {
             background-color: #333;
-            color: #fff;
+            color: white;
             padding: 60px 20px;
+            background: url('heading-background.jpg') no-repeat center center; /* Background image in the header */
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            position: relative;
         }
-	header h1 {
-            font-size: 1.5em;
-            text-align: center;
-            flex: 1 1 100%;
-        }
-
-	.menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .menu-toggle .bar {
-            height: 3px;
-            width: 25px;
-            background-color: #fff;
-            margin: 4px 0;
-            transition: 0.4s;
-        }
-
-        nav {
-            background-color: #444;
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background: rgba(0, 95, 115, 0.5); /* Dark overlay for better text visibility */
+            z-index: 1;
         }
 
-        .nav-list {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .nav-list li {
-            margin: 0 15px;
-        }
-
-        .nav-list li a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-list li a:hover {
-            background-color: #555;
-            border-radius: 4px;
-        }
-        .content {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        section {
-            margin-bottom: 30px;
-            padding: 10px 20px;
-        }
-
-        section h2 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 2px solid #ddd;
-        }
-
-        .intro h2 {
-            color: #2980b9;
-        }
-
-        .school-history h2 {
-            color:  #2980b9;
-        }
-
-        .our-mission h2 {
-            color:  #2980b9;
-        }
-
-        .why-join h2 {
-            color:  #2980b9;
-        }
-
-        .call-to-action h2 {
-            color:  #2980b9;
-        }
-
-        p, ul {
-            text-align: justify;
-            color: #555;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-	         @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.2em;
-            }
-
-            .circle {
-                width: 100px;
-                height: 100px;
-            }
-
-            .main-text h2 {
-                font-size: 1.3em;
-            }
-            
-           nav ul {
-                flex-direction: column;
-                padding: 0;
-                background-color: #444;
-            }
-
-            nav ul li {
-                margin: 5px 0;
-            }
-
-            nav ul li a {
-                padding: 5px 10px;
-                font-size: 0.7em;
-            }
-           
-            
-        } 
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
+        
     </style>
 </head>
 <body>
