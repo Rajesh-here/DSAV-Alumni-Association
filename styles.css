@@ -21,6 +21,17 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            position: relative;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 95, 115, 0.5); /* Dark overlay for better text visibility */
+            z-index: 1;
         }
 
         header h1 {
