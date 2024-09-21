@@ -195,13 +195,20 @@
             text-decoration: underline;
         }
 
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(100%);
+         @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
             }
-            100% {
-                transform: translateX(-100%);
+
+            .circle {
+                width: 100px;
+                height: 100px;
             }
+
+            .main-text h2 {
+                font-size: 1.3em;
+            }
+            
         }
 
         .event-photos img {
