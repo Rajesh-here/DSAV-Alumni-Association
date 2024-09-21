@@ -145,3 +145,26 @@ header h1 {
         margin-right: 0;
     }
 }
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    .circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .main-text h2 {
+        font-size: 1.3em;
+    }
+
+    .notice-board h2 {
+        font-size: 1.3em;
+    }
+
+    .notice-board .notices ul li a {
+        font-size: 1em;
+    }
+}
+
