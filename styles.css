@@ -17,6 +17,7 @@
             padding: 60px 20px;
             background: url('heading-background.jpg') no-repeat center center; /* Background image in the header */
             background-size: cover;
+            background: rgba(0, 95, 115, 0.5); /* Dark overlay for better text visibility */
             display: flex;
             align-items: center;
             justify-content: space-between;
