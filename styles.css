@@ -264,3 +264,56 @@
                 transform: translateY(-100%);
             }
         }
+section {
+            margin-bottom: 30px;
+            padding: 10px 20px;
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .intro h2 {
+            color: #2980b9;
+        }
+
+        .school-history h2 {
+            color:  #2980b9;
+        }
+
+        .our-mission h2 {
+            color:  #2980b9;
+        }
+
+        .why-join h2 {
+            color:  #2980b9;
+        }
+
+        .call-to-action h2 {
+            color:  #2980b9;
+        }
+
+        p, ul {
+            text-align: justify;
+            color: #555;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+	         @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .main-text h2 {
+                font-size: 1.3em;
+            }
