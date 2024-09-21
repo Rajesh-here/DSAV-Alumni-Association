@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Alumni Association</title>
     <link rel="stylesheet" href="styles.css">
+
     <style>
         /* Reset some default styles */
         * {
@@ -70,6 +71,20 @@
         nav {
             background-color: #444;
             width: 100%;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            z-index: 1000;
+            display: none; /* Hidden by default */
+            transition: max-height 0.3s ease-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        /* Show navigation when active */
+        nav.active {
+            display: block;
+            max-height: 500px; /* Adjust as needed */
         }
 
         .nav-list {
@@ -78,6 +93,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
+            flex-direction: row;
         }
 
         .nav-list li {
@@ -190,7 +206,6 @@
             }
         }
 
-        /* Event Photos Styles */
         .event-photos img {
             width: 100%;
             max-width: 400px;
@@ -210,17 +225,25 @@
 
         /* Responsive Styles */
         @media (max-width: 768px) {
-            .nav-list {
-                flex-direction: column;
-                display: none;
-            }
-
-            .nav-list.active {
-                display: flex;
-            }
-
+            /* Show the hamburger menu */
             .menu-toggle {
                 display: flex;
+            }
+
+            /* Hide the navigation menu by default */
+            nav {
+                display: none;
+                max-height: 0;
+            }
+
+            /* Show navigation when active */
+            nav.active {
+                display: block;
+                max-height: 500px; /* Adjust as needed */
+            }
+
+            .nav-list {
+                flex-direction: column;
             }
 
             .nav-list li {
@@ -246,6 +269,20 @@
         }
 
         @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                padding: 0;
+            }
+
+            nav ul li {
+                margin: 8px 0;
+            }
+
+            nav ul li a {
+                padding: 8px 12px;
+                font-size: 0.9em;
+            }
+
             header h1 {
                 font-size: 1.2em;
             }
@@ -285,14 +322,14 @@
             <img src="dsav_logo_alumni.jpg" alt="School Logo">
         </div>
         <h1>DEBAGRAM S A VIDYAPITH ALUMNI ASSOCIATION</h1>
-        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu">
+        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="primary-navigation">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
     </header>
 
-    <nav>
+    <nav id="primary-navigation">
         <ul class="nav-list">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -334,11 +371,15 @@
     <script>
         // Mobile Menu Toggle
         const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.querySelector('.nav-list');
+        const nav = document.getElementById('primary-navigation');
 
         mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
+            nav.classList.toggle('active');
             mobileMenu.classList.toggle('active');
+
+            // Update aria-expanded attribute for accessibility
+            const isExpanded = mobileMenu.classList.contains('active');
+            mobileMenu.setAttribute('aria-expanded', isExpanded);
         });
     </script>
 </body>
