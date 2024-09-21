@@ -17,8 +17,11 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 20px;
-            text-align: center;
+            padding: 60px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
         nav ul {
@@ -95,6 +98,37 @@
         ul {
             padding-left: 20px;
         }
+	         @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .main-text h2 {
+                font-size: 1.3em;
+            }
+            
+           nav ul {
+                flex-direction: column;
+                padding: 0;
+                background-color: #444;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            nav ul li a {
+                padding: 5px 10px;
+                font-size: 0.7em;
+            }
+           
+            
+        } 
 
         footer {
             background-color: #333;
