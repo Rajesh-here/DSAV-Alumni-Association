@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Alumni Association</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: relative;
+        }
+
+        /* Logo Container */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-container img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid #2980b9;
+            margin-right: 15px;
+        }
+
+        /* Header Title */
+        header h1 {
+            font-size: 1.5em;
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Hamburger Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle .bar {
+            height: 3px;
+            width: 25px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #444;
+            width: 100%;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            margin: 0 15px;
+        }
+
+        .nav-list li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-list li a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        /* Content Styles */
+        .content {
+            width: 80%;
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .main-text h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .main-text p {
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Notice Board Styles */
+        .notice-board {
+            margin: 20px 0;
+            width: 100%;
+            background: linear-gradient(145deg, #e6e6e6, #ffffff);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd;
+            position: relative;
+            overflow: hidden;
+            height: auto; /* Adjusted for responsiveness */
+        }
+
+        .notice-board h2 {
+            font-size: 2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2980b9;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .notice-board .notices {
+            overflow: hidden;
+        }
+
+        .notice-board .notices ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            animation: scroll-left 15s linear infinite;
+        }
+
+        .notice-board .notices ul li {
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #ffffff;
+            border-left: 5px solid #2980b9;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .notice-board .notices ul li:hover {
+            background-color: #f1f1f1;
+            transform: translateX(5px);
+        }
+
+        .notice-board .notices ul li a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .notice-board .notices ul li a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Event Photos Styles */
+        .event-photos img {
+            width: 100%;
+            max-width: 400px;
+            margin: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+                display: none;
+            }
+
+            .nav-list.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-list li {
+                margin: 10px 0;
+            }
+
+            .content {
+                width: 90%;
+                padding: 15px;
+            }
+
+            .main-text h2 {
+                font-size: 1.5em;
+            }
+
+            .notice-board h2 {
+                font-size: 1.5em;
+            }
+
+            .notice-board .notices ul {
+                animation: scroll-up 15s linear infinite;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            .logo-container img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .main-text h2 {
+                font-size: 1.3em;
+            }
+
+            .notice-board h2 {
+                font-size: 1.3em;
+            }
+
+            .notice-board .notices ul li a {
+                font-size: 1em;
+            }
+        }
+
+        /* Adjust animation for vertical scrolling on smaller screens */
+        @keyframes scroll-up {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="dsav_logo_alumni.jpg" alt="School Logo">
+        </div>
+        <h1>DEBAGRAM S A VIDYAPITH ALUMNI ASSOCIATION</h1>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="members.html">Members</a></li>
+            <li><a href="membership.html">Membership Registration</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <!-- Removed Duplicate Logo Section -->
+        <div class="main-text">
+            <h2>Connecting Alumni, Building Community</h2>
+            <p style="text-align: justify;">
+                Our alumni association is dedicated to uniting former students, strengthening connections, and giving back to our school community. Join us to stay connected with old friends, build new relationships with fellow alumni, and contribute to the growth and legacy of our alma mater.
+            </p>
+        </div>
+
+        <!-- Notice Board Section -->
+        <div class="notice-board">
+            <h2>Upcoming Events</h2>
+            <div class="notices">
+                <ul>
+                    <li><a href="event-details-education-career.html">Lecture and Interactive Session on "Education and Career" - August 10, 2024</a></li>
+                    <!-- Add more events here -->
+                    <!-- Example:
+                    <li><a href="event-details-other-event.html">Event Title - Date</a></li>
+                    -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 School Alumni Association. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.querySelector('.nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
